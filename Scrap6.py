@@ -46,10 +46,12 @@ def writeFile(text):
 
 def main():
     driver = getdriver()
-    while True:
+    for _ in range(5):
         time.sleep(2)
         element = driver.find_element(By.XPATH, '/html/body/div[1]/div/h1[2]')
         text = str(cleanText(element.text))
         writeFile(text)
+    
+    driver.quit()
 
-
+main()
